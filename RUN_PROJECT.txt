@@ -1,0 +1,33 @@
+DOCSHIELD CHRONOS - FULL STACK QUICK START
+
+Requirements
+- Node.js 22.16+ (the local API uses Node's built-in SQLite support)
+- npm
+
+Windows
+1. Double-click START_DOCSHIELD.bat
+2. Wait until the terminal shows both the API and Vite are ready.
+3. Open http://127.0.0.1:8080/
+
+Terminal
+npm install
+npm run dev
+
+The single dev command starts:
+- Frontend: http://localhost:8080/
+- Backend API: http://127.0.0.1:4000/
+- SQLite database: data/docshield.sqlite
+- Uploaded files: data/uploads/
+
+Demo account
+Email: demo@docshield.local
+Password: Demo@12345
+MFA: any 6 digits (for the prototype verification gate)
+
+The local backend uses authenticated API sessions, password hashing, SQLite persistence, sample seed data, audit events and real local file ingestion with SHA-256 hashing. Device erase/recovery operations remain safe simulations unless a privileged native agent is connected.
+
+PDF RECEIPT AUTO-DOWNLOAD
+- In Enterprise Sanitization, uploading a PDF now stores it in the local backend and automatically downloads a PDF evidence-intake receipt.
+- The receipt contains filename, case ID, size, SHA-256, workflow, timestamp, operator and a demo-mode notice.
+- The receipt is an intake/integrity receipt only; it is not proof of physical disk erasure.
+- The Download receipt button uses the same backend PDF generator after the upload is stored.
